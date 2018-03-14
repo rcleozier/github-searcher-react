@@ -29,18 +29,14 @@ class Search extends React.Component {
   ])
   .then(axios.spread(function (userResponse, repoResponse) {
 
-    that.setState({repositories: repoResponse.data});
-    that.setState({results: userResponse.data});
+    that.setState({repositories: repoResponse.data, error:false});
+    that.setState({results: userResponse.data, error:false});
 
     console.log(repoResponse.data);
   }))
   .catch(function (error) {
-      console.log(error);
+      that.setState({error: true});
   });
- }
-
- completeRepoSeach() {
-
  }
 
   render() {
@@ -71,11 +67,32 @@ class Search extends React.Component {
               {this.state.repositories &&
                 <div>
                   <h1> Repos {this.state.repositories.length} </h1>
-                  {this.state.repositories.forEach(function(repo) {
-                    <p> Here  </p>
-                   })
+                  <table>
+                    <thead>
+                      <td> Name </td>
+                      <td> Url </td>
+                      <td> Stars </td>
+                      <td> Forks </td>
+                      <td> Issues </td>
+                      <td> Size </td>
+                    </thead>
+                  {this.state.repositories.map((repo, index) => (
+                      <tr>
+                        <td> {repo.name} </td>
+                        <td> <a href={repo.html_url} </td>
+                        <td> {repo.stargazers_count} </td>
+                        <td> {repo.forks_count} </td>
+                        <td> {repo.open_issues_count} </td>
+                        <td> {repo.size} </td>
+                      </tr>
+                   ))}
                   }
+                  </table>
                 </div>
+              }
+
+              {this.state.error &&
+                <p> Error retrieving User  </p>
               }
             </div>
            }

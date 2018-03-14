@@ -22,6 +22,7 @@ html, body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .user-inner form {
@@ -73,4 +74,8 @@ html, body {
 .user-result__details {
   flex: 2;
   font-size: 18px;
+}
+
+.table {
+  width: 100%;
 }

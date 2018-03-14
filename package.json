@@ -1,0 +1,24 @@
+{
+  "name": "github-search",
+  "version": "1.0.0",
+  "description": "React app for searching github",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rcleozier@bitbucket.org/rcleozier/github.git"
+  },
+  "keywords": [
+    "react",
+    "github",
+    "api"
+  ],
+  "author": "Rob",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rcleozier/github#readme",
+  "dependencies": {
+    "serve": "^6.5.3"
+  }
+}
