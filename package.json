@@ -18,7 +18,7 @@
   "author": "Rob",
   "license": "ISC",
   "homepage": "https://bitbucket.org/rcleozier/github#readme",
-  "dependencies": {
-    "serve": "^6.5.3"
+  "devDependencies": {
+    "serve": "^9.6.0"
   }
 }
